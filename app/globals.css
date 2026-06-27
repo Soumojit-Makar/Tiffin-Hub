@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream: #FFF9F0;
+    --saffron: #f97316;
+    --chili: #e11d48;
+    --leaf: #16a34a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: #1c1917;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316, #e11d48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 249, 240, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .hero-bg {
+    background: linear-gradient(135deg, #fff9f0 0%, #fed7aa 40%, #fecdd3 100%);
+  }
+
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+}
