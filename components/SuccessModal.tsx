@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect } from "react";
 import { X, CheckCircle, MessageCircle } from "lucide-react";
 import type { OrderFormData } from "@/types";
@@ -9,26 +10,49 @@ interface Props {
   onClose: () => void;
 }
 
-export default function SuccessModal({ order, onClose }: Props) {
+export default function SuccessModal({
+  order,
+  onClose,
+}: Props) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
-  const fields = [
-    { label: "Name", value: order.customerName },
-    { label: "Mobile", value: order.mobile },
-    { label: "Address", value: order.address },
-    { label: "Meal", value: order.mealType },
-    { label: "Quantity", value: `${order.quantity}` },
-    { label: "Delivery Time", value: order.deliveryTime },
-    { label: "Notes", value: order.notes || "—" },
+  const customerFields = [
+    {
+      label: "Name",
+      value: order.customerName,
+    },
+    {
+      label: "Mobile",
+      value: order.mobile,
+    },
+    {
+      label: "Address",
+      value: order.address,
+    },
+    {
+      label: "Delivery Time",
+      value: order.deliveryTime,
+    },
+    {
+      label: "Notes",
+      value: order.notes || "—",
+    },
   ];
 
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
     >
       <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
@@ -39,30 +63,72 @@ export default function SuccessModal({ order, onClose }: Props) {
           >
             <X size={18} />
           </button>
+
           <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-green-200">
-            <CheckCircle className="text-white" size={32} />
+            <CheckCircle
+              className="text-white"
+              size={32}
+            />
           </div>
-          <h2 className="text-xl font-bold text-stone-800">Order Received! 🎉</h2>
+
+          <h2 className="text-xl font-bold text-stone-800">
+            Order Received! 🎉
+          </h2>
+
           <p className="text-stone-500 text-sm mt-1">
-            We&apos;ll confirm your order shortly via call or WhatsApp.
+            We'll confirm your order shortly via call or
+            WhatsApp.
           </p>
         </div>
 
-        {/* Order details */}
+        {/* Body */}
         <div className="p-6">
           <h3 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
-            Order Summary
+            Customer Details
           </h3>
+
           <div className="space-y-3 mb-6">
-            {fields.map((f) => (
-              <div key={f.label} className="flex justify-between items-start gap-4 py-2 border-b border-stone-100 last:border-0">
-                <span className="text-sm text-stone-500 shrink-0">{f.label}</span>
-                <span className="text-sm font-medium text-stone-800 text-right">{f.value}</span>
+            {customerFields.map((field) => (
+              <div
+                key={field.label}
+                className="flex justify-between items-start gap-4 py-2 border-b border-stone-100"
+              >
+                <span className="text-sm text-stone-500">
+                  {field.label}
+                </span>
+
+                <span className="text-sm font-medium text-stone-800 text-right">
+                  {field.value}
+                </span>
               </div>
             ))}
           </div>
 
-          {/* WhatsApp button */}
+          {/* Ordered Items */}
+          <h3 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
+            Ordered Items
+          </h3>
+
+          <div className="space-y-3 mb-6">
+            {order.items.map((item, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-center py-3 px-4 rounded-xl bg-orange-50 border border-orange-100"
+              >
+                <div>
+                  <p className="font-semibold text-stone-800">
+                    {item.mealType}
+                  </p>
+                </div>
+
+                <div className="text-orange-600 font-bold">
+                  × {item.quantity}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* WhatsApp Button */}
           <a
             href={buildWhatsAppMessage(order)}
             target="_blank"
@@ -72,6 +138,7 @@ export default function SuccessModal({ order, onClose }: Props) {
             <MessageCircle size={20} />
             Confirm via WhatsApp
           </a>
+
           <button
             onClick={onClose}
             className="w-full bg-stone-100 hover:bg-stone-200 text-stone-700 py-3.5 rounded-2xl font-semibold transition-colors text-sm"
