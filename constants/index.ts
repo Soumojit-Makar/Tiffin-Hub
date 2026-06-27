@@ -25,4 +25,4 @@ export const SOCIAL_LINKS = {
   whatsapp: `https://wa.me/${WHATSAPP_NUMBER}`,
 };
 
-export const SITE_URL = "https://tiffinhub.in";
+export const SITE_URL = "https://tiffinhub.shop";
