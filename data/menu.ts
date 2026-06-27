@@ -74,7 +74,7 @@ export const menuItems: MenuItem[] = [
     price: 100,
     category: "combo",
     emoji: "🍚",
-    veg: true,
+    veg: false,
     popular: true,
     image: "/egg-biryani.png",
   },
