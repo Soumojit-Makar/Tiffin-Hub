@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Affordable, hygienic, and delicious homemade tiffin service in " +
     CONTACT_INFO.serviceArea +
-    ". Order veg thali, non-veg thali, Bengali specials & more.",
+    ". Order veg thali, non-veg thali, Bengali specials & more."+SITE_URL,
   keywords: [
     "tiffin service",
     "food delivery",
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "tiffin service near me",
     "tiffin delivery",
     "homemade food",
+    "Tiffin Hub",
 
   ],
  
@@ -51,10 +52,9 @@ export const metadata: Metadata = {
     title: "Tiffin Hub",
     description: "Homemade meals delivered daily. Order now!",
   },
-
-
   icons: {
     icon: "/icon.png",
+
   },
 
 };

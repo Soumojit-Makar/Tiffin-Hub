@@ -19,8 +19,8 @@ export const MEAL_OPTIONS = [
 ];
 
 export const SOCIAL_LINKS = {
-  facebook: "https://www.instagram.com/_tiffin_hub_?igsh=bXAxYjQzdzM2NDRo",
-  instagram: "https://www.facebook.com/share/1DUgHCcWsk/",
+  facebook: "https://www.facebook.com/people/Tiffin-Hub/61573363534637/",
+  instagram: "https://www.instagram.com/_tiffin_hub_",
   twitter: "https://twitter.com/tiffinhub",
   whatsapp: `https://wa.me/${WHATSAPP_NUMBER}`,
 };
