@@ -21,17 +21,17 @@ export default function Hero() {
 
   return (
     <section
-  className="relative min-h-screen flex items-center overflow-hidden"
-  id="home"
->
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: "url('/hero.png')",
-    }}
-  />
+      className="relative min-h-screen flex items-center overflow-hidden"
+      id="home"
+    >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/hero.png')",
+        }}
+      />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15" />
       {/* Floating background emojis */}
       {mounted &&
         floatingEmojis.map((emoji, i) => (
@@ -69,7 +69,7 @@ shadow-2xl
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/80 border border-orange-200 rounded-full px-4 py-2 text-sm font-medium text-orange-700 shadow-sm">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Now delivering in Bhatpara & nearby areas
+              Now Delivering Across Kolkata & Nearby Areas
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white/90">
@@ -118,14 +118,14 @@ shadow-2xl
           {/* Illustration panel */}
           {/* <div className="flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96"> */}
-              {/* Main circle */}
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-rose-400 rounded-full shadow-2xl shadow-orange-300/50 flex items-center justify-center">
+          {/* Main circle */}
+          {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-rose-400 rounded-full shadow-2xl shadow-orange-300/50 flex items-center justify-center">
                 <span className="text-8xl sm:text-9xl" style={{ animation: "float 3s ease-in-out infinite" }}>
                   🍱
                 </span>
               </div> */}
-              {/* Orbiting icons */}
-              {/* {[
+          {/* Orbiting icons */}
+          {/* {[
                 { emoji: "🥗", top: "-8%", left: "50%", delay: "0s" },
                 { emoji: "🍛", top: "50%", left: "-8%", delay: "0.5s" },
                 { emoji: "🍚", top: "108%", left: "50%", delay: "1s" },
@@ -144,8 +144,8 @@ shadow-2xl
                   {item.emoji}
                 </div>
               ))} */}
-              {/* Rating badge */}
-              {/* <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2">
+          {/* Rating badge */}
+          {/* <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2">
                 <span className="text-yellow-400 text-lg">★★★★★</span>
                 <div>
                   <div className="text-xs font-bold text-stone-800">4.9/5</div>
