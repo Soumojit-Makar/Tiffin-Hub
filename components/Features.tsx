@@ -13,7 +13,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" ref={ref} className="section-pad bg-white">
+    <section id="features" ref={ref} className="section-pad bg-white" >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 text-sm font-medium text-orange-700 mb-4">

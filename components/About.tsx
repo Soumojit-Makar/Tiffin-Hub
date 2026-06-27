@@ -20,7 +20,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={ref} className="section-pad bg-white">
+    <section id="about" ref={ref} className="section-pad bg-white" style={{ backgroundImage: "url('/service.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Visual side */}
@@ -60,39 +60,39 @@ export default function About() {
           <div
             className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 text-sm font-medium text-orange-700 mb-4">
+            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-1 py-1.5 text-sm font-medium text-orange-700 mb-4">
               🍱 About Tiffin Hub
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-stone-800 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-stone-300 mb-6 leading-tight">
               Real Food, Made with{" "}
               <span className="text-gradient">Real Care</span>
             </h2>
-            <p className="text-stone-600 text-lg leading-relaxed mb-6">
+            <p className="text-stone-100 text-lg leading-relaxed mb-6">
               Tiffin Hub was born from a simple belief: everyone deserves a
               nourishing, home-cooked meal — especially when you&apos;re too
               busy to cook. We started in a small kitchen in Bhatpara and have
               grown into the area&apos;s most loved tiffin service.
             </p>
-            <p className="text-stone-600 leading-relaxed mb-8">
+            <p className="text-stone-100 leading-relaxed mb-8">
               Every meal is prepared fresh each morning using seasonal
               ingredients. No preservatives, no compromises — just honest,
               wholesome food that reminds you of home.
             </p>
 
             {/* Highlights */}
-            <div className="space-y-3">
+            <div className="space-y-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {highlights.map((h, i) => (
                 <div
                   key={h.label}
                   className={`flex items-center gap-4 p-3 rounded-xl hover:bg-orange-50 transition-all duration-300 ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    visible ? "opacity-100 translate-y-0 bg-orange-100" : "opacity-0 translate-y-4 bg-orange-50"
                   }`}
                   style={{ transitionDelay: `${300 + i * 80}ms` }}
                 >
                   <span className="text-2xl w-10 text-center">{h.emoji}</span>
                   <div>
                     <div className="font-semibold text-stone-800">{h.label}</div>
-                    <div className="text-sm text-stone-500">{h.desc}</div>
+                    <div className="text-sm text-stone-600">{h.desc}</div>
                   </div>
                   <span className="ml-auto text-green-500">✓</span>
                 </div>

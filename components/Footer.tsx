@@ -2,6 +2,7 @@
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/constants";
 import { Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
 import Image from "next/image";
+
 const quickLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -30,7 +31,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/icon.png" alt="Tiffin Hub Logo" width={40} height={40}  className="rounded-full" />
+              {/* <span className="text-3xl">🍱</span> */}
+              <Image src="/icon.png" alt="TiffinHub Logo" width={80} height={80} className="rounded-full" />
               <span className="font-bold text-2xl text-white">
                 Tiffin<span className="text-orange-400">Hub</span>
               </span>
@@ -71,6 +73,11 @@ export default function Footer() {
                   </button>
                 </li>
               ))}
+              <li>
+                <a href="/partner" className="text-pink-400 hover:text-pink-300 transition-colors text-sm font-medium">
+                  👩‍🍳 Become a Food Partner
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -101,8 +108,57 @@ export default function Footer() {
         <div className="border-t border-stone-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-500">
           <p>© {new Date().getFullYear()} Tiffin Hub. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Made with <span className="text-red-400">♥</span> in Bhatpara, West Bengal
+            Made  <span className="text-red-400">♥</span> by{" "}
+            <a
+              href="https://digitalindian.co.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-400 hover:text-orange-500 transition-colors font-medium"
+            >
+              DigitalIndian
+            </a>
           </p>
+          {/* <p>
+            <a
+              href="/privacy-policy"
+              className="text-stone-400 hover:text-orange-400 transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </p>
+          <p>
+            <a
+              href="/terms-of-service"
+              className="text-stone-400 hover:text-orange-400 transition-colors"
+            >
+              Terms of Service
+            </a>
+          </p>
+          <p>
+            <a
+              href="/refund-policy"
+              className="text-stone-400 hover:text-orange-400 transition-colors"
+            >
+              Refund Policy
+            </a>
+          </p>
+          <p>
+            <a
+              href="/cancellation-policy"
+              className="text-stone-400 hover:text-orange-400 transition-colors"
+            >
+              Cancellation Policy
+            </a>
+          </p>
+          <p>
+            <a
+              href="/shipping-policy"
+              className="text-stone-400 hover:text-orange-400 transition-colors"
+            >
+              Shipping Policy
+            </a>    
+          </p> */}
+
         </div>
       </div>
     </footer>
