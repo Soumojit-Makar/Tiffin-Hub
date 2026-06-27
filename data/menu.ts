@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     emoji: "🍚",
     veg: true,
     popular: true,
-    image: "/Egg-Biryani.png",
+    image: "/egg-biryani.png",
   },
   {
     id: "samosa",
